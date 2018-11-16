@@ -15,6 +15,7 @@ body {
   position: fixed;
   width: 100%;
   grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
 }
 .page-wrapper-grey {
   background-color: #000;

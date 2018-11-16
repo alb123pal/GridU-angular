@@ -15,6 +15,7 @@ body {
     position: fixed;
     width: 100%;
     grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
     &-grey {
       background-color: $dark-color;
       display: grid;
