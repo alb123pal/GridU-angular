@@ -19,6 +19,11 @@ body {
   grid-template-columns: 420px;
   max-width: 600px;
 }
+@media (max-width: 460px) {
+  .page-wrapper-content .login-modal-wrapper .login-modal {
+    grid-template-columns: 300px;
+  }
+}
 .page-wrapper-content .login-modal-wrapper .login-modal__title {
   background-color: #fff;
   display: flex;

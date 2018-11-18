@@ -18,6 +18,9 @@ body {
             grid-template-rows: 44px 250px;
             grid-template-columns: 420px;
             max-width: 600px;
+            @media (max-width: 460px) {
+                grid-template-columns: 300px;
+            }
             &__title {
                 background-color: $white-color;
                 display: flex;
@@ -79,7 +82,7 @@ body {
                 font-weight: 700;
                 height: 40px;
                 width: 100px;
-                background: -webkit-linear-gradient(bottom, #007d68, #00bcc0,)
+                background: -webkit-linear-gradient(bottom, #007d68, #00bcc0);
             }
         }
     }
