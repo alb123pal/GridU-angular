@@ -41,12 +41,20 @@ var checkValidation = function(ref) {
 
 var deleteItem = function() {
     document.getElementsByClassName('modal-items')[0].style.display = 'block';
+    document.getElementsByClassName('modal-item-delete')[0].style.display = 'grid';
 }
 
 var confirmDelete = function() {
     document.getElementsByClassName('modal-items')[0].style.display = 'none';
+    document.getElementsByClassName('modal-item-delete')[0].style.display = 'none';
 }
 
 var cancelDelete = function() {
     document.getElementsByClassName('modal-items')[0].style.display = 'none';
+    document.getElementsByClassName('modal-item-delete')[0].style.display = 'none';
+}
+
+var editItem = function() {
+    document.getElementsByClassName('modal-items')[0].style.display = 'block';
+    document.getElementsByClassName('modal-item-edit')[0].style.display = 'grid';
 }

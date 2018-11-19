@@ -41,7 +41,7 @@
                                                 <h2>Lorem ipsum item 1</h2>
                                                 <hr />
                                                 <p>1 Lorem ipsum dolor sit amet, connim veniam. Duis aute irure dolor in reprehenderit in voluptate venim veniam, quis nostrud exercitation ullamco labori. veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate vesectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                                <p>You can <a class="active-link">add 5 more.</a>You can also <a class="active-link">edit</a> details or <a class="active-link" onclick="deleteItem()">delete</a> them.</p>
+                                                <p>You can <span class="active-link">add 5 more.</span>You can also <span class="active-link" onclick="editItem()">edit</span> details or <span class="active-link" onclick="deleteItem()">delete</span> them.</p>
                                                 <hr />
                                                 <div class="article-item__content-info">
                                                         <span class="item-prize"><span class="item-prize--currency">$</span>47.95</span>
@@ -63,9 +63,77 @@
                                 </div>
                                <div class="modal-item-delete__content">
                                        <p>You are trying to delete item. Lorem ipsum dolor sit amet, connim veniam.</p>
-                                        <div class="modal-item-delete__content">
+                                        <div class="modal-item-panel-button">
                                                 <button class="button button__submit" onclick="confirmDelete()">Submit</button>
                                                 <button class="button button__cancel" onclick="cancelDelete()">Cancel</button>
+                                        </div>
+                               </div>
+                        </div>
+                        <div class="modal-item-edit">
+                               <div class="modal-item-delete__title">
+                                       <p>Edit: "Lorem ipsum dolor sit amet, connim veniam."</p>
+                                </div>
+                                <div class="modal-item-edit__content">
+                                       <div class="modal-item-left">
+                                               <div class="modal-edit-input">
+                                                        <p>Name:</p>
+                                                        <input type="text" name="name">
+                                               </div>
+                                               <div class="modal-edit-dropdown">
+                                                       <label>Category:</label>
+                                                        <select>
+                                                                <option value="wear">Wear</option>
+                                                                <option value="jeans">Jeans</option>
+                                                                <option value="boats">Boats</option>
+                                                        </select>
+                                               </div>
+                                               <div class="modal-edit-checkbox">
+                                                        <label>Gender:</label>
+                                                        <label class="label-checkbox">
+                                                                <input type="radio" name="gender" value="male"> 
+                                                                <p>Male</p>
+                                                                <span class="checkmark"></span>
+                                                        </label>
+                                                        <label class="label-checkbox">
+                                                                <input type="radio" name="gender" value="female"> 
+                                                                <p>Female</p>
+                                                                <span class="checkmark"></span>
+                                                        </label>
+                                                        <label class="label-checkbox">
+                                                                <input type="radio" name="gender" value="other">
+                                                                <p>Other</p>
+                                                                <span class="checkmark"></span>
+                                                        </label>
+                                                </div>
+                                                <div class="modal-edit-dropdown">
+                                                        <p>Description:</p>
+                                                        <textarea rows="20" cols="40" name="comment" placeholder="Enter a text here"></textarea>
+                                                </div>
+                                       </div>
+                                       <div class="modal-item-right">
+                                                <div class="modal-edit-link">
+                                                        <p>Link to image:</p>
+                                                        <input type="text" name="image" placeholder="Please enter link to image..">
+                                                </div>
+                                                <img class="" src="../assets/items/2.jpg" />
+                                                <div class="modal-edit-dropdown">
+                                                        <label>Price:</label>
+                                                        <input type="number" placeholder="Please enter a price">
+                                                </div>
+                                                <div class="modal-edit-dropdown">
+                                                        <label>Rating:</label>
+                                                        <select>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                        </select>
+                                                </div>
+                                                <div class="modal-item-panel-button">
+                                                        <button class="button button__submit" onclick="confirmDelete()">Submit</button>
+                                                        <button class="button button__cancel" onclick="cancelDelete()">Cancel</button>
+                                                </div>
                                         </div>
                                </div>
                         </div>
