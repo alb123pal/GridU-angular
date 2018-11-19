@@ -106,15 +106,15 @@ body {
   border-top: 1px solid #008773;
   height: 1px;
 }
-.page-wrapper-content .filters-panel {
+.page-wrapper .filters-panel {
   display: grid;
   justify-content: end;
 }
-.page-wrapper-content .filters-panel-options {
+.page-wrapper .filters-panel-options {
   margin-top: 25px;
   width: 400px;
 }
-.page-wrapper-content .filters-panel-options .button {
+.page-wrapper .filters-panel-options .button {
   border: none;
   border-radius: 10px;
   box-sizing: border-box;
@@ -126,7 +126,7 @@ body {
   width: 100px;
   background: -webkit-linear-gradient(bottom, #00bcc0, #007d68);
 }
-.page-wrapper-content .filters-panel-options .input {
+.page-wrapper .filters-panel-options .input {
   border: none;
   border-radius: 10px;
   box-sizing: border-box;
@@ -135,20 +135,30 @@ body {
   padding-left: 10px;
   width: 265px;
 }
-.page-wrapper-content .filters-panel-options .icon-search {
+.page-wrapper .filters-panel-options .icon-search {
   float: right;
   position: relative;
   right: 30px;
   top: -35px;
   width: 25px;
 }
-.page-wrapper-content .filters-panel-wrapper-advanced {
-  display: grid;
-  justify-content: end;
+.page-wrapper .filters-panel-wrapper-advanced {
+  display: none;
+  position: absolute;
+  z-index: 20;
+  top: 165px;
+  height: 40px;
+  max-width: 1024px;
+  width: 100%;
+  left: 0;
+  margin: 5px -26px;
+  right: 0px;
 }
-.page-wrapper-content .filters-panel-advanced {
+.page-wrapper .filters-panel-advanced {
   background-color: #fff;
-  width: 650px;
+  float: right;
+  max-width: 400px;
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

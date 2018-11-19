@@ -15,7 +15,7 @@ var showHideFilterOptions = function() {
     if (isHiddenFilterOptions) {
         document.getElementsByClassName('filters-panel-wrapper-advanced')[0].style.display = 'none';
     } else {
-        document.getElementsByClassName('filters-panel-wrapper-advanced')[0].style.display = 'grid';
+        document.getElementsByClassName('filters-panel-wrapper-advanced')[0].style.display = 'block';
     }
 }
 
@@ -57,4 +57,14 @@ var cancelDelete = function() {
 var editItem = function() {
     document.getElementsByClassName('modal-items')[0].style.display = 'block';
     document.getElementsByClassName('modal-item-edit')[0].style.display = 'grid';
+}
+
+var confirmEditItem = function() {
+    document.getElementsByClassName('modal-items')[0].style.display = 'none';
+    document.getElementsByClassName('modal-item-edit')[0].style.display = 'none';
+}
+
+var cancelEditItem = function() {
+    document.getElementsByClassName('modal-items')[0].style.display = 'none';
+    document.getElementsByClassName('modal-item-edit')[0].style.display = 'none';
 }
