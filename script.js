@@ -13,7 +13,6 @@ function showDialog() {
 var showHideFilterOptions = function() {
     isHiddenFilterOptions = !isHiddenFilterOptions;
     if (isHiddenFilterOptions) {
-    
         document.getElementsByClassName('filters-panel-wrapper-advanced')[0].style.display = 'none';
     } else {
         document.getElementsByClassName('filters-panel-wrapper-advanced')[0].style.display = 'grid';
@@ -38,4 +37,16 @@ var checkValidation = function(ref) {
             ref.parentElement.children[2].src = '../assets/password-inactive.svg';
         }
     }
+}
+
+var deleteItem = function() {
+    document.getElementsByClassName('modal-items')[0].style.display = 'block';
+}
+
+var confirmDelete = function() {
+    document.getElementsByClassName('modal-items')[0].style.display = 'none';
+}
+
+var cancelDelete = function() {
+    document.getElementsByClassName('modal-items')[0].style.display = 'none';
 }

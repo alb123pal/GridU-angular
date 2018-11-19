@@ -70,6 +70,17 @@
   font-size: 12px;
   font-weight: 700;
 }
+.page-wrapper .product-wrapper .article-item__content-info .button {
+  border-radius: 10px;
+  clear: right;
+  color: #fff;
+  float: right;
+  font-size: 12px;
+  font-weight: 700;
+  height: 40px;
+  width: 100px;
+  background: -webkit-linear-gradient(bottom, #007d68, #00bcc0);
+}
 .page-wrapper .product-wrapper .article-item__content p {
   font-size: 14px;
   height: auto;
@@ -77,9 +88,9 @@
   padding-bottom: 10px;
 }
 @media (min-width: 864px) {
-  .page-wrapper .product-wrapper .article-item__content p {
+  .page-wrapper .product-wrapper .article-item__content hr + p {
     grid-template-columns: 1fr;
-    height: 260px;
+    height: 235px;
   }
 }
 .page-wrapper .product-wrapper .article-item__content h2 {
@@ -92,4 +103,74 @@
   height: 1px;
 }
 
-/*# sourceMappingURL=product_customer.css.map */
+.modal-items {
+  display: none;
+  height: 100%;
+  left: 0;
+  margin: 0 auto;
+  position: fixed;
+  right: 0;
+}
+.modal-items-background {
+  background-color: #000;
+  height: 100%;
+  left: 0;
+  margin: 0 auto;
+  opacity: 0.4;
+  position: fixed;
+  width: 100%;
+}
+.modal-items-wrapper {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+  height: 100%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+.modal-items-wrapper .active-link {
+  color: #008773;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.modal-items-wrapper .modal-item-delete {
+  display: grid;
+  grid-template-rows: 44px 220px;
+  grid-template-columns: 420px;
+  max-width: 600px;
+  z-index: 20;
+}
+.modal-items-wrapper .modal-item-delete__title {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.modal-items-wrapper .modal-item-delete__content {
+  background: url(../../assets/modal-bg.png) grey;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 25px;
+}
+.modal-items-wrapper .modal-item-delete__content .button {
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  height: 40px;
+  width: 100px;
+}
+.modal-items-wrapper .modal-item-delete__content .button__cancel {
+  background: -webkit-linear-gradient(top, #b0b0b0, #7b7b7b);
+  float: right;
+}
+.modal-items-wrapper .modal-item-delete__content .button__submit {
+  background: -webkit-linear-gradient(bottom, #007d68, #00bcc0);
+  float: right;
+  margin-left: 25px;
+}
+
+/*# sourceMappingURL=product_admin.css.map */

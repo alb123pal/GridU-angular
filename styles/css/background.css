@@ -1,0 +1,89 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+.page-wrapper {
+  background: url("../../assets/bg.jpg");
+  display: grid;
+  height: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  overflow-y: scroll;
+  position: fixed;
+  width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+.page-wrapper-grey {
+  background-color: #000;
+  height: 100%;
+  left: 0;
+  margin: 0 auto;
+  max-width: 1024px;
+  opacity: 0.4;
+  position: fixed;
+  right: 14px;
+  width: 100%;
+}
+.page-wrapper-content {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+.page-wrapper-content .navigation {
+  margin-top: 20px;
+}
+.page-wrapper-content .navigation__back-link {
+  margin-left: 20px;
+}
+.page-wrapper-content .navigation__right-link {
+  float: right;
+  margin-right: 15px;
+}
+.page-wrapper-content .navigation a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header {
+  background-color: #008773;
+  border: 1px solid #89c6af;
+  box-sizing: border-box;
+  color: #fff;
+  height: 50px;
+  width: 100%;
+  z-index: 10;
+}
+.header .header-panel {
+  max-width: 1024px;
+  margin: 0 auto;
+  width: 100%;
+}
+.header .header-panel .header-name {
+  float: right;
+  font-style: italic;
+  margin: 15px 30px;
+}
+.header .header-panel .header-shop {
+  background: url("../../assets/shop.png");
+  margin: 15px 30px;
+  float: left;
+}
+
+.footer {
+  background-color: #008773;
+  border: 1px solid #89c6af;
+  box-sizing: border-box;
+  color: #fff;
+  height: 50px;
+  margin-top: 10px;
+  padding-top: 15px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+/*# sourceMappingURL=background.css.map */
