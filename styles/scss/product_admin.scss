@@ -29,7 +29,7 @@
       }
 
       img {
-        height: 350px;
+        height: $image-height;
         width: 100%;
       }
     }
@@ -307,7 +307,9 @@
     -webkit-appearance: none;
   }
 
-  label::after {
+  label {
+    
+    &::after {
       border-top: .4em solid;
       border-right: .4em solid transparent;
       border-bottom: 0;
@@ -323,6 +325,7 @@
       position: relative;
       top: 35px;
       width: 0;
+    }
   }
 }
 
