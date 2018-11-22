@@ -133,13 +133,13 @@ body {
     -webkit-box-orient: vertical;
 
     @media (min-width: 550px) {
-      max-height: 270px;
-      -webkit-line-clamp: 11;
+      max-height: 195px;
+      -webkit-line-clamp: 8;
     }
 
     @media (min-width: 1024px) {
-      max-height: 220px;
-      -webkit-line-clamp: 9;
+      max-height: 315px;
+      -webkit-line-clamp: 13;
     }
   }
 }
