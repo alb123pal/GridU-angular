@@ -23,7 +23,7 @@ body {
   justify-items: center;
   grid-template-columns: 1fr;
   margin: auto 20px;
-  z-index: 10;
+  z-index: $main-wraper-z-index;
 
   @media (min-width: 550px) {
     grid-template-columns: 1fr 1fr;
@@ -104,7 +104,7 @@ body {
         font-size: 12px;
         font-weight: 700;
         height: 40px;
-        width: 100px;
+        width: $button-width;
         background: -webkit-linear-gradient(bottom, #007d68, #00bcc0);
       }
     }
@@ -165,7 +165,7 @@ body {
       font-weight: 700;
       height: 40px;
       margin-right: 10px;
-      width: 100px;
+      width: $button-width;
       background: -webkit-linear-gradient(bottom, #00bcc0, #007d68);
     }
 
@@ -191,7 +191,7 @@ body {
   &-wrapper-advanced {
     display: none;
     position: absolute;
-    z-index: 20;
+    z-index: $modal-z-index;
     top: 165px;
     height: 40px;
     max-width: 1024px;

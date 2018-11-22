@@ -27,12 +27,13 @@ body {
     position: fixed;
     right: 14px;
     width: 100%;
+    z-index: $background-z-index;
   }
   &-content {
     display: grid;
     height: 100%;
     width: 100%;
-    z-index: 10;
+    z-index: $main-wraper-z-index;
     .navigation{
       margin-top: 20px;
       &__back-link {
@@ -57,7 +58,7 @@ body {
   color: $white-color;
   height: 50px;
   width: 100%;
-  z-index: 10;
+  z-index: $main-wraper-z-index;
   .header-panel {
     max-width: 1024px;
     margin: 0 auto;
@@ -84,5 +85,5 @@ body {
   padding-top: 15px;
   width: 100%;
   text-align: center;
-  z-index: 10;
+  z-index: $main-wraper-z-index;
 }

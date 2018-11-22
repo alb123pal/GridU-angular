@@ -66,7 +66,7 @@
       font-size: 12px;
       font-weight: 700;
       height: 40px;
-      width: 100px;
+      width: $button-width;
       background: -webkit-linear-gradient(bottom, #007d68, #00bcc0);
     }
   }
@@ -164,7 +164,7 @@
   grid-template-rows: 44px 1fr;
   grid-template-columns: auto;
   max-width: 600px;
-  z-index: 20;
+  z-index: $modal-z-index;
   
   &__title {
     background-color: #fff;
@@ -233,7 +233,7 @@
       font-size: 12px;
       font-weight: 700;
       height: 40px;
-      width: 100px;
+      width: $button-width;
 
       &__cancel {
         background: -webkit-linear-gradient(top, #b0b0b0, #7b7b7b);
@@ -254,7 +254,7 @@
   grid-template-rows: 44px 220px;
   grid-template-columns: 420px;
   max-width: 600px;
-  z-index: 20;
+  z-index: $modal-z-index;
 
   &__title {
     background-color: #fff;
@@ -277,7 +277,7 @@
       font-size: 12px;
       font-weight: 700;
       height: 40px;
-      width: 100px;
+      width: $button-width;
 
       &__cancel {
         background: -webkit-linear-gradient(top, #b0b0b0, #7b7b7b);
