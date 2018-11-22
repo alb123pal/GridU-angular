@@ -59,6 +59,7 @@
     }
 
     .button {
+      border: none;
       border-radius: 10px;
       clear: right;
       color: $white-color;
@@ -224,27 +225,6 @@
           border: 2px solid $error-color;
       }
     }
-
-    .button {
-      border-radius: 10px;
-      color: $white-color;
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 700;
-      height: 40px;
-      width: $button-width;
-
-      &__cancel {
-        background: -webkit-linear-gradient(top, #b0b0b0, #7b7b7b);
-        float: right;
-      }
-
-      &__submit {
-        background: -webkit-linear-gradient(bottom, #007d68, #00bcc0);
-        float: right;
-        margin-left: 25px;
-      }
-    }
   }
 
   &__currency {
@@ -382,6 +362,28 @@
     }
   }
   width: 100%;
+}
+
+.button {
+  border: none;
+  border-radius: 10px;
+  color: $white-color;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  height: 40px;
+  width: $button-width;
+
+  &__cancel {
+    background: -webkit-linear-gradient(top, #b0b0b0, #7b7b7b);
+    float: right;
+  }
+
+  &__submit {
+    background: -webkit-linear-gradient(bottom, #007d68, #00bcc0);
+    float: right;
+    margin-left: 25px;
+  }
 }
 
 .modal-item-edit__footer {
