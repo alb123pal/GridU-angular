@@ -191,7 +191,6 @@
       display: block;
       font-size: 12px;
       font-weight: 700;
-
     }
 
     img {
@@ -247,6 +246,14 @@
       }
     }
   }
+
+  &__currency {
+    float: right;
+    font-size: 14px;
+    top: 32px;
+    left: 14px;
+    position: relative;
+  }
 }
 
 .modal-item-delete {
@@ -294,6 +301,14 @@
 }
 
 .modal-edit-dropdown {
+
+  &__currency {
+    float: right;
+    font-size: 14px;
+    top: 32px;
+    left: 14px;
+    position: relative;
+  }
 
   select {
     border: none;
