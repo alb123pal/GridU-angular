@@ -1,1 +1,3 @@
-styles/css
+styles/css/
+node_modules/
+.vscode/

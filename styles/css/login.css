@@ -7,74 +7,40 @@ body {
 .page-wrapper-content {
   grid-template-columns: 1fr;
 }
-.page-wrapper-content .login-modal-wrapper {
+
+.login-modal-wrapper {
   display: grid;
   margin: 5px;
   justify-content: center;
   align-items: center;
 }
-.page-wrapper-content .login-modal-wrapper .login-modal {
+
+.login-modal {
   display: grid;
   grid-template-rows: 44px 250px;
   grid-template-columns: 420px;
   max-width: 600px;
 }
 @media (max-width: 460px) {
-  .page-wrapper-content .login-modal-wrapper .login-modal {
+  .login-modal {
     grid-template-columns: 300px;
   }
 }
-.page-wrapper-content .login-modal-wrapper .login-modal__title {
+.login-modal__title {
   background-color: #fff;
   display: flex;
   justify-content: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-.page-wrapper-content .login-modal-wrapper .login-modal__title h2 {
+.login-modal__title h2 {
   font-size: 16px;
 }
-.page-wrapper-content .login-modal-wrapper .login-modal__content {
-  background: url("../../assets/modal-bg.png") grey;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  padding: 25px;
-}
-.page-wrapper-content .login-modal-wrapper .login-modal__content p {
-  font-size: 14px;
-  margin: 0px 0px 7px;
-}
-.page-wrapper-content .login-modal-wrapper .login-modal__content input {
-  border: none;
-  border-radius: 10px;
-  box-sizing: border-box;
-  font-size: 14px;
-  height: 40px;
-  padding-left: 10px;
-  width: 100%;
-}
-.page-wrapper-content .login-modal-wrapper .login-modal__content input:focus {
-  border: 2px solid #92c4bc;
-  outline: none;
-}
-.page-wrapper-content .login-modal-wrapper .login-modal__content input:invalid {
-  color: #ff0000;
-  border: 2px solid #ff0000;
-}
-.page-wrapper-content .login-modal-wrapper .login-modal__input-panel {
-  margin-bottom: 20px;
-}
-.page-wrapper-content .login-modal-wrapper .login-modal__input-panel img {
-  float: right;
-  position: relative;
-  right: 15px;
-  top: -33px;
-}
-.page-wrapper-content .login-modal-wrapper .login-modal .error input {
+.login-modal .error input {
   border: 2px solid #ff0000;
   color: #ff0000;
 }
-.page-wrapper-content .login-modal-wrapper .login-modal__submit-button {
+.login-modal__submit-button {
   border-radius: 10px;
   clear: right;
   color: #fff;
@@ -84,6 +50,44 @@ body {
   height: 40px;
   width: 100px;
   background: -webkit-linear-gradient(bottom, #007d68, #00bcc0);
+}
+
+.login-modal__content {
+  background: url("../../assets/modal-bg.png") grey;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 25px;
+}
+.login-modal__content p {
+  font-size: 14px;
+  margin: 0px 0px 7px;
+}
+.login-modal__content input {
+  border: none;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 40px;
+  padding-left: 10px;
+  width: 100%;
+}
+.login-modal__content input:focus {
+  border: 2px solid #92c4bc;
+  outline: none;
+}
+.login-modal__content input:invalid {
+  color: #ff0000;
+  border: 2px solid #ff0000;
+}
+
+.login-modal__input-panel {
+  margin-bottom: 20px;
+}
+.login-modal__input-panel img {
+  float: right;
+  position: relative;
+  right: 15px;
+  top: -33px;
 }
 
 /*# sourceMappingURL=login.css.map */

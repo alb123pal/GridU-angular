@@ -30,66 +30,69 @@
   height: 350px;
   width: 100%;
 }
-.page-wrapper .product-wrapper .article-item .panel-stars {
-  background-color: #080808;
-  position: relative;
-  top: -4px;
-  opacity: 0.9;
-  width: 100%;
-}
-.page-wrapper .product-wrapper .article-item .panel-stars :first-child {
-  margin-left: 15px;
-}
-.page-wrapper .product-wrapper .article-item .panel-stars .star {
-  display: inline-block;
-  height: 20px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  width: 22px;
-}
-.page-wrapper .product-wrapper .article-item .panel-stars .star--active {
-  background: url("../../assets/star-active.svg") no-repeat;
-}
-.page-wrapper .product-wrapper .article-item .panel-stars .star--inactive {
-  background: url("../../assets/star-inactive.svg") no-repeat;
-}
-.page-wrapper .product-wrapper .article-item__content {
+
+.article-item__content {
   padding: 15px 30px 0;
 }
-.page-wrapper .product-wrapper .article-item__content-info .item-prize {
+.article-item__content-info .item-prize {
   font-size: 22px;
   font-weight: 700;
   position: relative;
   top: 3px;
 }
-.page-wrapper .product-wrapper .article-item__content-info .item-prize--currency {
+.article-item__content-info .item-prize--currency {
   color: #008773;
 }
-.page-wrapper .product-wrapper .article-item__content-info .item-sold {
+.article-item__content-info .item-sold {
   color: red;
   font-size: 12px;
   font-weight: 700;
 }
-.page-wrapper .product-wrapper .article-item__content p {
+.article-item__content p {
   font-size: 14px;
   height: auto;
   margin: 0;
   padding-bottom: 10px;
 }
 @media (min-width: 864px) {
-  .page-wrapper .product-wrapper .article-item__content p {
+  .article-item__content p {
     grid-template-columns: 1fr;
     height: 260px;
   }
 }
-.page-wrapper .product-wrapper .article-item__content h2 {
+.article-item__content h2 {
   margin: 0;
   padding: 0 0 8px 0;
+  text-align: center;
 }
-.page-wrapper .product-wrapper .article-item__content hr {
+.article-item__content hr {
   border: 0;
   border-top: 2px solid #008773;
   height: 1px;
+}
+
+.panel-stars {
+  background-color: #080808;
+  position: relative;
+  top: -4px;
+  opacity: 0.9;
+  width: 100%;
+}
+.panel-stars :first-child {
+  margin-left: 15px;
+}
+.panel-stars .star {
+  display: inline-block;
+  height: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 22px;
+}
+.panel-stars .star--active {
+  background: url("../../assets/star-active.svg") no-repeat;
+}
+.panel-stars .star--inactive {
+  background: url("../../assets/star-inactive.svg") no-repeat;
 }
 
 /*# sourceMappingURL=product_customer.css.map */

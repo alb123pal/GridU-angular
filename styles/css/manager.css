@@ -5,12 +5,13 @@
   grid-template-rows: auto 1fr;
   max-width: 1024px;
 }
-.page-wrapper .product-wrapper {
+
+.product-wrapper {
   display: grid;
   justify-items: center;
   grid-template-columns: 1fr;
 }
-.page-wrapper .product-wrapper .article-item {
+.product-wrapper .article-item {
   color: #000;
   background-color: #fff;
   display: grid;
@@ -21,13 +22,13 @@
   padding: 20px;
 }
 @media (min-width: 720px) {
-  .page-wrapper .product-wrapper .article-item {
+  .product-wrapper .article-item {
     grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
     height: 360px;
   }
 }
-.page-wrapper .product-wrapper .article-item img {
+.product-wrapper .article-item img {
   height: 350px;
   width: 100%;
 }
