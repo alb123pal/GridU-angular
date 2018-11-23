@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="../styles/css/background.css">
         <link rel="stylesheet" type="text/css" href="../styles/css/product_customer.css">
 
+        <script type="text/javascript" src="../build/main.bundle.js"></script>
         <script type="text/javascript" src="../js/script.js"></script>
 </head>
 <body>
@@ -28,7 +29,24 @@
                         <main class="product-wrapper">
                                 <section class="article-item">
                                         <aside class="article-item-left">
-                                                <img src='../assets/items/1.jpg'>
+                                                <div class="panel-slider">
+                                                        <span class="panel-slider__arrow arrow--left" onclick="previousImage()"></span>
+                                                        <span class="panel-slider__arrow arrow--right" onclick="nextImage()"></span>
+                                                </div>
+                                                <div class="panel-slider__slides">
+                                                        <div class="panel-slider__slides-element active">
+                                                                <img src='../assets/items/1.jpg'>
+                                                                <span class="slider-text">Lorem Ipsum 1</span>
+                                                        </div>
+                                                        <div class="panel-slider__slides-element">
+                                                                <img src='../assets/items/2.jpg'>
+                                                                <span class="slider-text">Lorem Ipsum 2</span>
+                                                        </div>
+                                                        <div class="panel-slider__slides-element">
+                                                               <img src='../assets/items/3.jpg'>
+                                                               <span class="slider-text">Lorem Ipsum 3</span>
+                                                        </div>
+                                                </div>
                                                 <div class="panel-stars">
                                                         <span class="star star--active"></span>
                                                         <span class="star star--active"></span>
