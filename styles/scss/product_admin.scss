@@ -178,8 +178,6 @@
 
   &__content {
     background: url(../../assets/modal-bg.png) grey;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 1fr;
@@ -377,16 +375,19 @@
 
   &__cancel {
     background: -webkit-linear-gradient(top, #b0b0b0, #7b7b7b);
-    float: right;
   }
 
   &__submit {
     background: -webkit-linear-gradient(bottom, #007d68, #00bcc0);
-    float: right;
     margin-left: 25px;
   }
 }
 
 .modal-item-edit__footer {
-  grid-column-start: 2;
+  background: url(../../assets/modal-bg.png) grey;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: grid;
+  justify-content: right;
+  padding: 0px 15px 15px;
 }
