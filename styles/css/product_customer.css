@@ -121,6 +121,7 @@
   transition: 0.4s;
 }
 .panel-slider__slides img {
+  height: 350px;
   max-width: 470px;
   position: absolute;
   width: 80%;
