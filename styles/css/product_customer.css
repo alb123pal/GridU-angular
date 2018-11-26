@@ -76,7 +76,6 @@
 }
 
 .panel-stars {
-  background-color: #080808;
   position: relative;
   top: -4px;
   opacity: 0.9;
@@ -109,7 +108,7 @@
 @media (min-width: 720px) {
   .panel-slider {
     max-width: 470px;
-    width: 46%;
+    width: 64%;
   }
 }
 .panel-slider__slides {
@@ -130,7 +129,7 @@
 }
 @media (min-width: 720px) {
   .panel-slider__slides img {
-    width: 46%;
+    width: 70%;
   }
 }
 .panel-slider__slides .slider-text {
@@ -142,7 +141,17 @@
 }
 @media (min-width: 720px) {
   .panel-slider__slides .slider-text {
-    left: 22%;
+    left: 29%;
+  }
+}
+@media (min-width: 864px) {
+  .panel-slider__slides .slider-text {
+    left: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .panel-slider__slides .slider-text {
+    left: 31%;
   }
 }
 .panel-slider__slides .active {
