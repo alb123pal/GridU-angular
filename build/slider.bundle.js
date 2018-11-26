@@ -4,10 +4,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
@@ -51,28 +47,8 @@ function (_HTMLElement) {
     shadowRoot.appendChild(tmpl.content.cloneNode(true));
     var leftArrow = shadowRoot.querySelector('.arrow--left'),
         rightArrow = shadowRoot.querySelector('.arrow--right');
-    leftArrow.addEventListener('click', _this.nextImage.bind());
-    rightArrow.addEventListener('click', _this.nextImage.bind());
-    return _this;
-  }
-
-  _createClass(Slider, [{
-    key: "nextImage",
-    value: function nextImage() {
-      // panelSlideNode[0].children[currentSlide].classList.remove('active');panel-slider__slides
-      if (currentSlide == maxSlideElement) {
-        currentSlide = 0;
-      } else {
-        currentSlide++;
-      }
-
-      console.log(currentSlide); // panelSlideNode[0].children[currentSlide].classList.add('active');
-    }
-  }, {
-    key: "previousImage",
-    value: function previousImage() {
-      // panelSlideNode[0].children[currentSlide].classList.remove('active');
-      console.log('maxSlideElement: ', maxSlideElement);
+    leftArrow.addEventListener('click', function () {
+      shadowRoot.querySelector('.panel-slider__slides').children[currentSlide].classList.remove('active');
 
       if (currentSlide == 0) {
         currentSlide = maxSlideElement;
@@ -80,9 +56,21 @@ function (_HTMLElement) {
         currentSlide--;
       }
 
-      console.log(currentSlide); // panelSlideNode[0].children[currentSlide].classList.add('active');
-    }
-  }]);
+      shadowRoot.querySelector('.panel-slider__slides').children[currentSlide].classList.add('active');
+    });
+    rightArrow.addEventListener('click', function () {
+      shadowRoot.querySelector('.panel-slider__slides').children[currentSlide].classList.remove('active');
+
+      if (currentSlide == maxSlideElement) {
+        currentSlide = 0;
+      } else {
+        currentSlide++;
+      }
+
+      shadowRoot.querySelector('.panel-slider__slides').children[currentSlide].classList.add('active');
+    });
+    return _this;
+  }
 
   return Slider;
 }(_wrapNativeSuper(HTMLElement));

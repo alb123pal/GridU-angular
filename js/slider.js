@@ -36,36 +36,27 @@ class Slider extends HTMLElement {
 
         let leftArrow = shadowRoot.querySelector('.arrow--left'),
             rightArrow = shadowRoot.querySelector('.arrow--right');
+            
+        leftArrow.addEventListener('click', () => {
+            shadowRoot.querySelector('.panel-slider__slides').children[currentSlide].classList.remove('active');
+            if (currentSlide == 0) {
+                currentSlide = maxSlideElement
+            } else {
+                currentSlide--;
+            }
+            shadowRoot.querySelector('.panel-slider__slides').children[currentSlide].classList.add('active');
+        });
 
-        leftArrow.addEventListener('click', this.nextImage.bind());
-        rightArrow.addEventListener('click', this.nextImage.bind());
-    }
-
-    nextImage() {
-        // panelSlideNode[0].children[currentSlide].classList.remove('active');panel-slider__slides
-        if (currentSlide == maxSlideElement) {
-
-            currentSlide = 0
-        } else {
-            currentSlide++;
-        }
-        console.log(currentSlide);
-    
-        // panelSlideNode[0].children[currentSlide].classList.add('active');
-    }
-
-    previousImage() {
-        // panelSlideNode[0].children[currentSlide].classList.remove('active');
-        console.log('maxSlideElement: ', maxSlideElement);
-    
-        if (currentSlide == 0) {
-            currentSlide = maxSlideElement
-        } else {
-            currentSlide--;
-        }
-        console.log(currentSlide);
-        // panelSlideNode[0].children[currentSlide].classList.add('active');
-    };  
+        rightArrow.addEventListener('click', () => {
+            shadowRoot.querySelector('.panel-slider__slides').children[currentSlide].classList.remove('active');
+            if (currentSlide == maxSlideElement) {
+                currentSlide = 0
+            } else {
+                currentSlide++;
+            }
+            shadowRoot.querySelector('.panel-slider__slides').children[currentSlide].classList.add('active');
+        });
+    } 
 }
 
 window.customElements.define('app-slider', Slider);
