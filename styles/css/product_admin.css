@@ -244,6 +244,7 @@
   padding-left: 10px;
   width: 100%;
   -webkit-appearance: none;
+  -moz-appearance: none;
 }
 .modal-edit-dropdown label::after {
   border-top: 0.4em solid;
