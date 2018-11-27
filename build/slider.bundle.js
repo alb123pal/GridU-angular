@@ -23,7 +23,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 var tmpl = document.createElement('template');
-tmpl.innerHTML = "\n<link rel=\"stylesheet\" type=\"text/css\" href=\"../styles/css/product_customer.css\">\n\n<div class=\"panel-slider\">\n<span id=\"leftArrow\" class=\"panel-slider__arrow arrow--left\"></span>\n<span id=\"rightArrow\" class=\"panel-slider__arrow arrow--right\"></span>\n</div>\n<div class=\"panel-slider__slides\">\n<div class=\"panel-slider__slides-element active\">\n        <img src='../assets/items/1.jpg'>\n        <div>\n                <span class=\"slider-text\">Lorem Ipsum 1</span>\n        </div>\n</div>\n<div class=\"panel-slider__slides-element\">\n        <img src='../assets/items/2.jpg'>\n        <span class=\"slider-text\">Lorem Ipsum 2</span>\n</div>\n<div class=\"panel-slider__slides-element\">\n       <img src='../assets/items/3.jpg'>\n       <span class=\"slider-text\">Lorem Ipsum 3</span>\n</div>\n</div>\n";
+tmpl.innerHTML = "\n<link rel=\"stylesheet\" type=\"text/css\" href=\"../styles/css/product_customer.css\">\n\n<div class=\"panel-slider\">\n<span id=\"leftArrow\" class=\"panel-slider__arrow arrow--left\"></span>\n<span id=\"rightArrow\" class=\"panel-slider__arrow arrow--right\"></span>\n</div>\n<div class=\"panel-slider__slides\">\n<div class=\"panel-slider__slides-element active\">\n        <img src='../assets/items/1.jpg'>\n        <div>\n                <span class=\"slider-text\">Lorem Ipsum 1</span>\n        </div>\n</div>\n</div>\n";
 
 var Slider =
 /*#__PURE__*/
@@ -36,8 +36,8 @@ function (_HTMLElement) {
     _classCallCheck(this, Slider);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Slider).call(this));
-    var currentSlide = 0,
-        maxSlideElement = 2,
+    var currentSlide = 1,
+        maxSlideElement = 3,
         panelSlideNode = document.getElementsByClassName("panel-slider__slides");
 
     var shadowRoot = _this.attachShadow({
@@ -48,26 +48,22 @@ function (_HTMLElement) {
     var leftArrow = shadowRoot.querySelector('.arrow--left'),
         rightArrow = shadowRoot.querySelector('.arrow--right');
     leftArrow.addEventListener('click', function () {
-      shadowRoot.querySelector('.panel-slider__slides').children[currentSlide].classList.remove('active');
-
-      if (currentSlide == 0) {
+      if (currentSlide == 1) {
         currentSlide = maxSlideElement;
       } else {
         currentSlide--;
       }
 
-      shadowRoot.querySelector('.panel-slider__slides').children[currentSlide].classList.add('active');
+      shadowRoot.querySelector('.panel-slider__slides-element').children[0].src = "../assets/items/".concat(currentSlide, ".jpg");
     });
     rightArrow.addEventListener('click', function () {
-      shadowRoot.querySelector('.panel-slider__slides').children[currentSlide].classList.remove('active');
-
       if (currentSlide == maxSlideElement) {
-        currentSlide = 0;
+        currentSlide = 1;
       } else {
         currentSlide++;
       }
 
-      shadowRoot.querySelector('.panel-slider__slides').children[currentSlide].classList.add('active');
+      shadowRoot.querySelector('.panel-slider__slides-element').children[0].src = "../assets/items/".concat(currentSlide, ".jpg");
     });
     return _this;
   }

@@ -13,22 +13,14 @@ tmpl.innerHTML = `
                 <span class="slider-text">Lorem Ipsum 1</span>
         </div>
 </div>
-<div class="panel-slider__slides-element">
-        <img src='../assets/items/2.jpg'>
-        <span class="slider-text">Lorem Ipsum 2</span>
-</div>
-<div class="panel-slider__slides-element">
-       <img src='../assets/items/3.jpg'>
-       <span class="slider-text">Lorem Ipsum 3</span>
-</div>
 </div>
 `;
 
 class Slider extends HTMLElement {
     constructor() {
         super();
-        var currentSlide = 0,
-            maxSlideElement = 2,
+        var currentSlide = 1,
+            maxSlideElement = 3,
             panelSlideNode = document.getElementsByClassName("panel-slider__slides");
 
         let shadowRoot = this.attachShadow({mode: 'open'});
@@ -38,23 +30,21 @@ class Slider extends HTMLElement {
             rightArrow = shadowRoot.querySelector('.arrow--right');
             
         leftArrow.addEventListener('click', () => {
-            shadowRoot.querySelector('.panel-slider__slides').children[currentSlide].classList.remove('active');
-            if (currentSlide == 0) {
+            if (currentSlide == 1) {
                 currentSlide = maxSlideElement
             } else {
                 currentSlide--;
             }
-            shadowRoot.querySelector('.panel-slider__slides').children[currentSlide].classList.add('active');
+            shadowRoot.querySelector('.panel-slider__slides-element').children[0].src = `../assets/items/${currentSlide}.jpg`;
         });
 
         rightArrow.addEventListener('click', () => {
-            shadowRoot.querySelector('.panel-slider__slides').children[currentSlide].classList.remove('active');
             if (currentSlide == maxSlideElement) {
-                currentSlide = 0
+                currentSlide = 1
             } else {
                 currentSlide++;
             }
-            shadowRoot.querySelector('.panel-slider__slides').children[currentSlide].classList.add('active');
+            shadowRoot.querySelector('.panel-slider__slides-element').children[0].src = `../assets/items/${currentSlide}.jpg`;
         });
     } 
 }
