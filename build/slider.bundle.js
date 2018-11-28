@@ -77,7 +77,7 @@ function (_HTMLElement) {
       watermak = document.createElement("span");
       watermak.setAttribute("class", "img-watermark");
       watermak.innerHTML += 'Demo Shop';
-      image.parentElement.insertBefore(watermak, image);
+      shadowRoot.querySelector('.panel-slider').appendChild(watermak);
     }
 
     function nextImage() {
