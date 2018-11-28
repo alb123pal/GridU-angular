@@ -201,4 +201,16 @@
   z-index: 90;
 }
 
+.img-watermark {
+  color: #fff;
+  font-size: 30px;
+  height: 40px;
+  opacity: 0.6;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  width: 160px;
+  z-index: 50;
+}
+
 /*# sourceMappingURL=product_customer.css.map */

@@ -44,6 +44,7 @@ function (_HTMLElement) {
         image,
         resultImage,
         lens,
+        watermak,
         cx,
         cy;
     shadowRoot = _this.attachShadow({
@@ -54,6 +55,7 @@ function (_HTMLElement) {
     image = shadowRoot.querySelector('.panel-slider__slides-element').children[0];
     resultImage = shadowRoot.querySelector('.panel-slider__zoom');
     addLenseToDOM();
+    addWatermark();
     invokeEventListener();
 
     function invokeEventListener() {
@@ -69,6 +71,13 @@ function (_HTMLElement) {
       lens = document.createElement("div");
       lens.setAttribute("class", "img-zoom-lens");
       image.parentElement.insertBefore(lens, image);
+    }
+
+    function addWatermark() {
+      watermak = document.createElement("span");
+      watermak.setAttribute("class", "img-watermark");
+      watermak.innerHTML += 'Demo Shop';
+      image.parentElement.insertBefore(watermak, image);
     }
 
     function nextImage() {

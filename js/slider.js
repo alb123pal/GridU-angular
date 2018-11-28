@@ -20,7 +20,7 @@ class Slider extends HTMLElement {
         super();
         var currentSlide = 1,
             maxSlideElement = 3,
-            shadowRoot, leftArrow, rightArrow, image, resultImage, lens, cx, cy;
+            shadowRoot, leftArrow, rightArrow, image, resultImage, lens, watermak, cx, cy;
             
         shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.appendChild(tmpl.content.cloneNode(true));
@@ -32,8 +32,8 @@ class Slider extends HTMLElement {
         resultImage = shadowRoot.querySelector('.panel-slider__zoom');
 
         addLenseToDOM();
+        addWatermark();
         invokeEventListener();
-
 
         function invokeEventListener() {
             image.addEventListener('mousemove', moveLensCallback);
@@ -50,6 +50,13 @@ class Slider extends HTMLElement {
             lens = document.createElement("div");
             lens.setAttribute("class", "img-zoom-lens");
             image.parentElement.insertBefore(lens, image);
+        }
+
+        function addWatermark() {
+            watermak = document.createElement("span");
+            watermak.setAttribute("class", "img-watermark");
+            watermak.innerHTML += 'Demo Shop';
+            image.parentElement.insertBefore(watermak, image);
         }
 
         function nextImage() {
