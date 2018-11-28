@@ -23,7 +23,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 var tmpl = document.createElement('template');
-tmpl.innerHTML = "\n<link rel=\"stylesheet\" type=\"text/css\" href=\"../styles/css/product_customer.css\">\n\n<div class=\"panel-slider\">\n<span id=\"leftArrow\" class=\"panel-slider__arrow arrow--left\"></span>\n<span id=\"rightArrow\" class=\"panel-slider__arrow arrow--right\"></span>\n</div>\n<div class=\"panel-slider__slides\">\n<div class=\"panel-slider__slides-element active\">\n        <img src='../assets/items/1.jpg'>\n        <div>\n                <span class=\"slider-text\">Lorem Ipsum 1</span>\n        </div>\n</div>\n</div>\n";
+tmpl.innerHTML = "\n<link rel=\"stylesheet\" type=\"text/css\" href=\"../styles/css/product_customer.css\">\n\n<div class=\"panel-slider\">\n<span id=\"leftArrow\" class=\"panel-slider__arrow arrow--left\"></span>\n<span id=\"rightArrow\" class=\"panel-slider__arrow arrow--right\"></span>\n</div>\n<div class=\"panel-slider__slides\">\n<div class=\"panel-slider__slides-element active\">\n    <img src='../assets/items/1.jpg'>\n</div>\n</div>\n<div class=\"panel-slider__zoom\">\n</div>\n";
 
 var Slider =
 /*#__PURE__*/
@@ -38,33 +38,111 @@ function (_HTMLElement) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Slider).call(this));
     var currentSlide = 1,
         maxSlideElement = 3,
-        panelSlideNode = document.getElementsByClassName("panel-slider__slides");
-
-    var shadowRoot = _this.attachShadow({
+        shadowRoot,
+        leftArrow,
+        rightArrow,
+        image,
+        resultImage,
+        lens,
+        cx,
+        cy;
+    shadowRoot = _this.attachShadow({
       mode: 'open'
     });
-
     shadowRoot.appendChild(tmpl.content.cloneNode(true));
-    var leftArrow = shadowRoot.querySelector('.arrow--left'),
-        rightArrow = shadowRoot.querySelector('.arrow--right');
-    leftArrow.addEventListener('click', function () {
-      if (currentSlide == 1) {
-        currentSlide = maxSlideElement;
-      } else {
-        currentSlide--;
-      }
+    leftArrow = shadowRoot.querySelector('.arrow--left'), rightArrow = shadowRoot.querySelector('.arrow--right');
+    image = shadowRoot.querySelector('.panel-slider__slides-element').children[0];
+    resultImage = shadowRoot.querySelector('.panel-slider__zoom');
+    addLenseToDOM();
+    invokeEventListener();
 
-      shadowRoot.querySelector('.panel-slider__slides-element').children[0].src = "../assets/items/".concat(currentSlide, ".jpg");
-    });
-    rightArrow.addEventListener('click', function () {
+    function invokeEventListener() {
+      image.addEventListener('mousemove', moveLensCallback);
+      lens.addEventListener('mousemove', moveLensCallback);
+      image.addEventListener('mouseout', moveoutLenseCallback);
+      lens.addEventListener('mouseout', moveoutLenseCallback);
+      leftArrow.addEventListener('click', previousImage);
+      rightArrow.addEventListener('click', nextImage);
+    }
+
+    function addLenseToDOM() {
+      lens = document.createElement("div");
+      lens.setAttribute("class", "img-zoom-lens");
+      image.parentElement.insertBefore(lens, image);
+    }
+
+    function nextImage() {
       if (currentSlide == maxSlideElement) {
         currentSlide = 1;
       } else {
         currentSlide++;
       }
 
-      shadowRoot.querySelector('.panel-slider__slides-element').children[0].src = "../assets/items/".concat(currentSlide, ".jpg");
-    });
+      shadowRoot.querySelector('.panel-slider__slides-element').children[1].src = "../assets/items/".concat(currentSlide, ".jpg");
+    }
+
+    function previousImage() {
+      if (currentSlide == 1) {
+        currentSlide = maxSlideElement;
+      } else {
+        currentSlide--;
+      }
+
+      shadowRoot.querySelector('.panel-slider__slides-element').children[1].src = "../assets/items/".concat(currentSlide, ".jpg");
+    }
+
+    function moveLensCallback(e) {
+      var pos, x, y;
+      shadowRoot.querySelector('.panel-slider__zoom').style.display = 'block';
+      shadowRoot.querySelector('.img-zoom-lens').style.display = 'block';
+      cx = resultImage.offsetWidth / lens.offsetWidth;
+      cy = resultImage.offsetHeight / lens.offsetHeight;
+      resultImage.style.backgroundImage = "url('" + image.src + "')";
+      resultImage.style.backgroundSize = image.width * cx + "px " + image.height * cy + "px";
+      pos = getCursorPosition(e);
+      x = pos.x - lens.offsetWidth / 2;
+      y = pos.y - lens.offsetHeight / 2;
+
+      if (x > image.width - lens.offsetWidth) {
+        x = image.width - lens.offsetWidth;
+      }
+
+      if (x < 0) {
+        x = 0;
+      }
+
+      if (y > image.height - lens.offsetHeight) {
+        y = image.height - lens.offsetHeight;
+      }
+
+      if (y < 0) {
+        y = 0;
+      }
+
+      lens.style.left = x + "px";
+      lens.style.top = y + "px";
+      resultImage.style.backgroundPosition = "-" + x * cx + "px -" + y * cy + "px";
+    }
+
+    function moveoutLenseCallback(e) {
+      shadowRoot.querySelector('.panel-slider__zoom').style.display = 'none';
+      shadowRoot.querySelector('.img-zoom-lens').style.display = 'none';
+    }
+
+    function getCursorPosition(e) {
+      var imageReactangle,
+          x = 0,
+          y = 0;
+      e = e || window.event;
+      imageReactangle = image.getBoundingClientRect();
+      x = e.pageX - imageReactangle.left;
+      y = e.pageY - imageReactangle.top;
+      return {
+        x: x,
+        y: y
+      };
+    }
+
     return _this;
   }
 

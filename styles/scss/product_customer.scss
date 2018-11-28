@@ -24,7 +24,7 @@
       max-width: 100%;
       padding: 20px;
 
-      @media (min-width: 964px) {
+      @media (min-width: 1034px) {
         grid-template-columns: 1fr 1fr;
         height: 400px;
       }
@@ -88,12 +88,19 @@
 
 .panel-stars {
   position: relative;
-  top: -4px;
+  top: -23px;
   opacity: 0.9;
   width: 100%;
+  z-index: $panel-text-z-index;
 
-  :first-child {
-    margin-left: 15px;
+  .slider-text {
+    bottom: 20px;
+    display: block;
+    color: $white-color;
+    max-width: 470px;
+    text-align: center;
+    position: relative;
+    z-index: $arrow-z-index;
   }
 
   .star {
@@ -102,6 +109,10 @@
     margin-top: 5px;
     margin-bottom: 5px;
     width: 22px;
+
+    &--first {
+      margin-left: 15px;
+    }
 
     &--active {
       background: url('../../assets/star-active.svg') no-repeat;
@@ -118,19 +129,23 @@
   position: absolute;
   height: 53%;
   max-width: 470px;
-  width: 80%;
+  width: 83%;
 
-  @media (min-width: 720px) {
-    max-width: 470px;
-    width: 64%;
+  @media (min-width: 490px) {
+    width: 84%;
+  }
+
+  @media (min-width: 520px) {
+    width: 85%;
   }
 
   &__slides {
     height: 100%;
     max-height: 355px;
-    overflow: hidden;
+    position: relative;
 
     &-element {
+      height: 100%;
       opacity: 0;
       transition: 0.4s;
     }
@@ -139,34 +154,34 @@
       height: 350px;
       max-width: 470px;
       position: absolute;
-      width: 80%;
+      width: 100%;
       transition: 0.4s;
       z-index: $slider-z-index;
       @media (min-width: 720px) {
-        width: 70%;
-      }
-    }
-
-    .slider-text {
-      color: $white-color;
-      position: absolute;
-      top: 61%;
-      left: 37%;
-      z-index: $arrow-z-index;
-     
-      @media (min-width: 720px) {
-        left: 29%;
-      }
-       @media (min-width: 864px) {
-        left: 25%;
-      }
-      @media (min-width: 1200px) {
-        left: 31%;
+        width: 100%;
       }
     }
 
     .active {
         opacity: 1;
+    }
+  }
+
+  &__zoom {
+    border: 1px solid #ffca00;
+    display: none; 
+    height: 350px;
+    width: 250px;
+    position: absolute;
+    right: 1%;
+    top: 8rem;
+
+    @media (min-width: 920px) {
+      right: 10%;
+    }
+
+    @media (min-width: 1034px) {
+      right: 25%;
     }
   }
 
@@ -176,6 +191,7 @@
     width: 30%;
     z-index: $slider-z-index;
   }
+
   .arrow {
     &--left {
       cursor: pointer;
@@ -191,4 +207,15 @@
       z-index: $arrow-z-index;
     }
   }
+}
+
+.img-zoom-lens {
+  background-color: white;
+  display: none;
+  opacity: 0.7;
+  position: absolute;
+  border: 1px solid #ffca00;
+  width: 60px;
+  height: 90px;
+  z-index: 90;
 }
