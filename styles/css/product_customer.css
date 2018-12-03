@@ -76,14 +76,15 @@
 }
 
 .panel-stars {
+  background-color: #080808;
   position: relative;
-  top: -23px;
+  top: 1px;
   opacity: 0.9;
   width: 100%;
   z-index: 60;
 }
 .panel-stars .slider-text {
-  bottom: 20px;
+  bottom: 30px;
   display: block;
   color: #fff;
   max-width: 470px;
@@ -94,7 +95,7 @@
 .panel-stars .star {
   display: inline-block;
   height: 20px;
-  margin-top: 5px;
+  margin-top: -12px;
   margin-bottom: 5px;
   width: 22px;
 }
@@ -146,6 +147,7 @@
 }
 @media (min-width: 720px) {
   .panel-slider__slides img {
+    height: 100%;
     width: 100%;
   }
 }

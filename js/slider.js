@@ -1,5 +1,5 @@
-let tmpl = document.createElement('template');
-tmpl.innerHTML = `
+let tmplSlider = document.createElement('template');
+tmplSlider.innerHTML = `
 <link rel="stylesheet" type="text/css" href="../styles/css/product_customer.css">
 
 <div class="panel-slider">
@@ -23,7 +23,7 @@ class Slider extends HTMLElement {
             shadowRoot, leftArrow, rightArrow, image, resultImage, lens, watermak, cx, cy;
             
         shadowRoot = this.attachShadow({mode: 'open'});
-        shadowRoot.appendChild(tmpl.content.cloneNode(true));
+        shadowRoot.appendChild(tmplSlider.content.cloneNode(true));
 
         leftArrow = shadowRoot.querySelector('.arrow--left'),
         rightArrow = shadowRoot.querySelector('.arrow--right');

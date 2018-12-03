@@ -8,10 +8,11 @@
 
         <link rel="stylesheet" type="text/css" href="../styles/css/background.css">
         <link rel="stylesheet" type="text/css" href="../styles/css/product_customer.css">
+        <link rel="stylesheet" type="text/css" href="../styles/css/review.css">
 
         <script type="text/javascript" src="../build/main.bundle.js"></script>
         <script type="text/javascript" src="../js/script.js"></script>
-        <script type="text/javascript" src="../build/slider.bundle.js"></script>
+        <script type="text/javascript" src="../build/component.bundle.js"></script>
 </head>
 <body>
         <div class="page-wrapper">
@@ -51,6 +52,14 @@
                                                         <span class="item-sold">(sold out)</span>
                                                 </div>
                                         </div>
+                                </section>
+                                <section class="app-review">
+                                        <div class="add-review-open">
+                                                <p>There is no user reviews for now <br/></p>
+                                                <p id='dynamicReviewParagraph'>Would you like <a class="add-review-open__button">to share your thoughts with other customers.</a>
+                                                </p>
+                                        </div>
+                                        <app-review></app-review>
                                 </section>
                         </main>
                 </div>
